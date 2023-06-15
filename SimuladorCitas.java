@@ -20,6 +20,8 @@ public class Main {
         }
 
         cargarDatos();
+        solicitarAcceso();
+
 
         private static void cargarDatos() {
             cargarDoctores();
@@ -82,4 +84,16 @@ public class Main {
             } catch (IOException e) {
                 System.out.println("Error al cargar las citas: " + e.getMessage());
             }
+        }
+
+        private static void solicitarAcceso() {
+            System.out.println("Bienvenido al sistema de administración de citas");
+            System.out.print("Ingrese su identificador: ");
+            String identificador = scanner.nextLine();
+
+            System.out.print("Ingrese su contraseña: ");
+            String contraseña = scanner.nextLine();
+
+            // Realizar verificación de identificador y contraseña aquí
+            // ...
         }
