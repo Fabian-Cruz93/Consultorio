@@ -136,3 +136,4 @@ public class Main {
         System.out.println("4. Mostrar citas");
         System.out.println("5. Salir");
         System.out.print("Seleccione una opción: ");
+    }
