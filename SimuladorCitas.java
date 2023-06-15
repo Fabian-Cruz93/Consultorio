@@ -214,3 +214,11 @@ public class Main {
             System.out.println("La cita con ID " + idCita + " no existe.");
         }
     }
+
+    private static void guardarDatos() {
+        sistemaDeCitas.guardarDoctores();
+        sistemaDeCitas.guardarPacientes();
+        sistemaDeCitas.guardarCitas();
+        System.out.println("Datos guardados exitosamente.");
+    }
+}
