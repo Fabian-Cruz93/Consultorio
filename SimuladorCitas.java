@@ -22,6 +22,36 @@ public class Main {
         cargarDatos();
         solicitarAcceso();
 
+        int opcion;
+        do {
+            mostrarMenu();
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Consumir nueva línea pendiente
+
+            switch (opcion) {
+                case 1:
+                    darAltaDoctor();
+                    break;
+                case 2:
+                    darAltaPaciente();
+                    break;
+                case 3:
+                    crearCita();
+                    break;
+                case 4:
+                    mostrarCitas();
+                    break;
+                case 5:
+                    guardarDatos();
+                    System.out.println("Saliendo del programa...");
+                    break;
+                default:
+                    System.out.println("Opción inválida. Por favor, intente nuevamente.");
+                    break;
+            }
+        } while (opcion != 5);
+    }
+
 
         private static void cargarDatos() {
             cargarDoctores();
@@ -97,3 +127,12 @@ public class Main {
             // Realizar verificación de identificador y contraseña aquí
             // ...
         }
+
+    private static void mostrarMenu() {
+        System.out.println("\nMenú Principal");
+        System.out.println("1. Dar de alta doctor");
+        System.out.println("2. Dar de alta paciente");
+        System.out.println("3. Crear cita");
+        System.out.println("4. Mostrar citas");
+        System.out.println("5. Salir");
+        System.out.print("Seleccione una opción: ");
