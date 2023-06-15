@@ -168,3 +168,49 @@ public class Main {
         sistemaDeCitas.agregarPaciente(id, nombreCompleto);
         System.out.println("Paciente dado de alta exitosamente.");
     }
+
+    private static void crearCita() {
+        System.out.println("\nCrear Cita");
+        System.out.print("Ingrese el ID de la cita: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consumir nueva línea pendiente
+
+        System.out.print("Ingrese la fecha y hora de la cita: ");
+        String fechaHora = scanner.nextLine();
+
+        System.out.print("Ingrese el motivo de la cita: ");
+        String motivo = scanner.nextLine();
+
+        System.out.print("Ingrese el ID del doctor: ");
+        int idDoctor = scanner.nextInt();
+        scanner.nextLine(); // Consumir nueva línea pendiente
+
+        Doctor doctor = sistemaDeCitas.buscarDoctorPorId(idDoctor);
+
+        System.out.print("Ingrese el ID del paciente: ");
+        int idPaciente = scanner.nextInt();
+        scanner.nextLine(); // Consumir nueva línea pendiente
+
+        Paciente paciente = sistemaDeCitas.buscarPacientePorId(idPaciente);
+
+        Cita cita = new Cita(id, fechaHora, motivo, doctor, paciente);
+        sistemaDeCitas.agregarCita(id, fechaHora, motivo, doctor, paciente);
+        System.out.println("Cita creada exitosamente.");
+    }
+
+    private static void mostrarCitas() {
+        System.out.println("\nMostrar Citas");
+        System.out.print("Ingrese el ID de la cita: ");
+        int idCita = scanner.nextInt();
+        scanner.nextLine(); // Consumir nueva línea pendiente
+
+        Cita citaMostrar = sistemaDeCitas.buscarCitaPorId(idCita);
+        if (citaMostrar != null) {
+            Paciente paciente = citaMostrar.getPaciente();
+            Doctor doctor = citaMostrar.getDoctor();
+            System.out.println("Paciente: " + paciente.getNombreCompleto());
+            System.out.println("Doctor: " + doctor.getNombreCompleto());
+        } else {
+            System.out.println("La cita con ID " + idCita + " no existe.");
+        }
+    }
