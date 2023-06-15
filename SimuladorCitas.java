@@ -137,3 +137,34 @@ public class Main {
         System.out.println("5. Salir");
         System.out.print("Seleccione una opción: ");
     }
+
+    private static void darAltaDoctor() {
+        System.out.println("\nDar de Alta Doctor");
+        System.out.print("Ingrese el ID del doctor: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consumir nueva línea pendiente
+
+        System.out.print("Ingrese el nombre completo del doctor: ");
+        String nombreCompleto = scanner.nextLine();
+
+        System.out.print("Ingrese la especialidad del doctor: ");
+        String especialidad = scanner.nextLine();
+
+        Doctor doctor = new Doctor(id, nombreCompleto, especialidad);
+        sistemaDeCitas.agregarDoctor(id, nombreCompleto, especialidad);
+        System.out.println("Doctor dado de alta exitosamente.");
+    }
+
+    private static void darAltaPaciente() {
+        System.out.println("\nDar de Alta Paciente");
+        System.out.print("Ingrese el ID del paciente: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Consumir nueva línea pendiente
+
+        System.out.print("Ingrese el nombre completo del paciente: ");
+        String nombreCompleto = scanner.nextLine();
+
+        Paciente paciente = new Paciente(id, nombreCompleto);
+        sistemaDeCitas.agregarPaciente(id, nombreCompleto);
+        System.out.println("Paciente dado de alta exitosamente.");
+    }
