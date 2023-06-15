@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Main {
+public class SimuladorCitas {
     private static Scanner scanner = new Scanner(System.in);
     private static SistemaDeCitas sistemaDeCitas = new SistemaDeCitas();
 
